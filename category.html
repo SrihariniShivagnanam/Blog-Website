@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category Detail</title>
+    <style>
+        /* Set the background color for the body */
+        body {
+            background-color: darkgray; /* Replace with your desired background color */
+            font-family: Arial, sans-serif; /* Replace with your desired font family */
+        }
+        
+        /* Style the heading */
+        h2 {
+            color: #333; /* Change the heading text color */
+            text-align: center;
+        }
+        
+        /* Style the list items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            background-color: #fff; /* Change the background color for list items */
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to list items */
+        }
+    </style>
+</head>
+<body>
+    <h2>Blog Posts in the category {{ category.name }}</h2>
+    <ul>
+        {% for b in blog_posts %}
+        <li>
+            <strong>{{ b.blog_title }}</strong>
+            <br>
+            Author: {{ b.author }}
+            <br>
+            {{ b.blog_content }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
